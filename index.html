@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AGORA Nieruchomości Płock - domy, mieszkania, działki, lokale</title>
+<meta name="description" content="Biuro nieruchomości w Płocku przy ul. Padlewskiego 3. Domy, mieszkania, działki, lokale i hale na sprzedaż i wynajem w Płocku i okolicy. Licencjonowani pośrednicy, od 2010 roku.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Cpath d='M4 20 L15 10 L23 17' fill='none' stroke='%23999' stroke-width='3'/%3E%3Cpath d='M18 13 L22 10 L29 16' fill='none' stroke='%23999' stroke-width='3'/%3E%3Cpath d='M9 26 L15.5 19 L22 26Z' fill='%2334C6F5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preload" as="image" href="img/hero1-1280.webp" imagesrcset="img/hero1-800.webp 800w, img/hero1-1280.webp 1280w, img/hero1-1920.webp 1920w" imagesizes="100vw">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#oferty">Przejdź do ofert</a>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#top" aria-label="AGORA Nieruchomości - strona główna">
+      <svg class="logo-znak" viewBox="-1 -2 91 33" aria-hidden="true"><g fill="none"><path d="M0 25 L34.3 1.8 L60 21" stroke="#999" stroke-width="4.4"/><path d="M47 16 L62.7 4.5 L88.5 23.5" stroke="var(--logo-tlo,#fff)" stroke-width="8"/><path d="M47 16 L62.7 4.5 L88.5 23.5" stroke="#999" stroke-width="4.4"/></g><path d="M12.4 17.5V8h6.2v5.3z" fill="#999"/><path d="M21.5 30 L38.7 16.2 L56 30Z" fill="#34C6F5"/></svg>
+      <span class="logo-txt"><b>AGORA</b> NIERUCHOMOŚCI</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu główne">
+      <a href="#oferty">Oferty</a>
+      <a href="#sprzedaj">Sprzedaj lub wynajmij</a>
+      <a href="#obszar">Obszar działania</a>
+      <a href="#biuro">O biurze</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="menu-tel" href="tel:+48243644477">Zadzwoń: 24 364 44 77</a>
+    </nav>
+    <a class="tel-btn" href="tel:+48243644477" aria-label="Zadzwoń do biura: 24 364 44 77">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span>24 364 44 77</span>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="hero" aria-label="Wyszukiwarka ofert">
+  <div class="hero-foto" id="slajdy">
+    <figure class="slajd on" data-oferta="1404">
+      <img src="img/hero1-1280.webp" srcset="img/hero1-800.webp 800w, img/hero1-1280.webp 1280w, img/hero1-1920.webp 1920w" sizes="100vw" alt="Biały dom z frontonem nad wejściem, gmina Stara Biała" fetchpriority="high">
+    </figure>
+    <figure class="slajd" data-oferta="1448">
+      <img src="img/hero2-1280.webp" srcset="img/hero2-800.webp 800w, img/hero2-1280.webp 1280w, img/hero2-1920.webp 1920w" sizes="100vw" alt="Dom wśród drzew w Cekanowie, gmina Słupno" loading="lazy">
+    </figure>
+    <figure class="slajd" data-oferta="1460">
+      <img src="img/hero3-1280.webp" srcset="img/hero3-800.webp 800w, img/hero3-1280.webp 1280w, img/hero3-1920.webp 1920w" sizes="100vw" alt="Dom z kolumnami przy wejściu w Dobrzykowie, gmina Gąbin" loading="lazy">
+    </figure>
+    <a class="slajd-podpis" id="slajdPodpis" href="#oferty"><span id="slajdTxt">Dom w stylu glamour, gm. Stara Biała</span><b id="slajdCena">2 299 000 zł</b></a>
+    <div class="kropki" role="tablist" aria-label="Zdjęcia ofert">
+      <button class="on" aria-label="Oferta 1"></button><button aria-label="Oferta 2"></button><button aria-label="Oferta 3"></button>
+    </div>
+  </div>
+  <div class="hero-in">
+    <div class="wrap hero-tresc">
+      <h1>Tu spotykają się kupujący i&nbsp;sprzedający</h1>
+      <p class="lead">Domy, mieszkania, działki, lokale i hale w Płocku i okolicy. Licencjonowane biuro przy Padlewskiego 3, od 2010 roku.</p>
+      <form class="szukaj" id="szukaj" role="search" aria-label="Szukaj nieruchomości">
+        <div class="szukaj-zakl" role="radiogroup" aria-label="Rodzaj transakcji">
+          <label><input type="radio" name="tr" value="sprzedaz" checked><span>Kupię</span></label>
+          <label><input type="radio" name="tr" value="wynajem"><span>Wynajmę</span></label>
+        </div>
+        <div class="szukaj-pola">
+          <label class="pole"><span>Rodzaj</span>
+            <select name="typ">
+              <option value="">Wszystkie</option>
+              <option value="dom">Domy</option>
+              <option value="mieszkanie">Mieszkania</option>
+              <option value="lokal">Lokale</option>
+              <option value="dzialka">Działki</option>
+              <option value="obiekt">Hale i obiekty</option>
+            </select>
+          </label>
+          <label class="pole"><span>Lokalizacja</span>
+            <select name="lok">
+              <option value="">Płock i okolice</option>
+              <option value="plock">Płock</option>
+              <option value="okolice">Okolice Płocka</option>
+            </select>
+          </label>
+          <label class="pole pole-dod"><span>Cena do</span>
+            <select name="cena" id="cenaDo"></select>
+          </label>
+          <label class="pole pole-dod"><span>Metraż od</span>
+            <input name="m2" type="number" inputmode="numeric" min="0" step="10" placeholder="np. 50 m²">
+          </label>
+          <button class="btn btn-gl" type="submit">Pokaż oferty</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="oferty" aria-labelledby="oferty-h">
+  <div class="wrap">
+    <div class="sek-glowa">
+      <h2 id="oferty-h">Aktualne oferty</h2>
+      <p>Wybrane ogłoszenia z naszej bazy - domy, mieszkania, lokale, działki i hale. W części ofert wynagrodzenie biura płaci sprzedający.</p>
+    </div>
+    <div class="filtry" id="filtry">
+      <div class="filtry-gr" role="group" aria-label="Transakcja">
+        <button data-f="tr" data-v="" class="on">Wszystkie</button>
+        <button data-f="tr" data-v="sprzedaz">Sprzedaż</button>
+        <button data-f="tr" data-v="wynajem">Wynajem</button>
+      </div>
+      <div class="filtry-gr filtry-typ" role="group" aria-label="Rodzaj nieruchomości">
+        <button data-f="typ" data-v="" class="on">Każdy rodzaj</button>
+        <button data-f="typ" data-v="dom">Domy</button>
+        <button data-f="typ" data-v="mieszkanie">Mieszkania</button>
+        <button data-f="typ" data-v="lokal">Lokale</button>
+        <button data-f="typ" data-v="dzialka">Działki</button>
+        <button data-f="typ" data-v="obiekt">Hale i obiekty</button>
+      </div>
+      <p class="filtry-licz" id="licznik" aria-live="polite"></p>
+    </div>
+    <div class="karty" id="karty"></div>
+    <p class="brak" id="brak" hidden>Nie mamy teraz takiej oferty na stronie. <a href="#kontakt" data-pyt="Szukam nieruchomości: ">Napisz, czego szukasz</a> - sprawdzimy też oferty spoza strony.</p>
+    <div class="wiecej"><button class="btn btn-obr" id="wiecej" type="button">Pokaż wszystkie oferty</button></div>
+
+    <div class="zlecenie">
+      <div>
+        <h3>Nie ma tu tego, czego szukasz?</h3>
+        <p>Na życzenie szukamy konkretnej nieruchomości i pomagamy ją bezpiecznie kupić: sprawdzamy stan prawny, dokumenty i warunki umowy.</p>
+      </div>
+      <a class="btn btn-gl" href="#kontakt" data-pyt="Szukam nieruchomości: ">Opisz, czego szukasz</a>
+    </div>
+  </div>
+</section>
+
+<section class="sek sek-ciemna" id="sprzedaj" aria-labelledby="sprzedaj-h">
+  <svg class="dachy-tlo" viewBox="0 0 900 300" aria-hidden="true" preserveAspectRatio="xMidYMax slice"><g fill="none" stroke="currentColor" stroke-width="10"><path d="M-40 300 L330 40 L620 250"/><path d="M500 160 L680 30 L960 230"/></g><rect x="125" y="70" width="60" height="120" fill="currentColor"/></svg>
+  <div class="wrap sprzedaj-in">
+    <div class="sprzedaj-txt">
+      <h2 id="sprzedaj-h">Sprzedaj lub wynajmij z&nbsp;nami</h2>
+      <p class="lead-c">Przygotujemy ofertę, pokażemy nieruchomość zainteresowanym i poprowadzimy transakcję do końca. Z klientem rozstajemy się dopiero przy przekazaniu kluczy i podpisaniu protokołu zdawczo-odbiorczego.</p>
+      <ul class="lista-tr">
+        <li>Pomagamy zebrać komplet dokumentów i sprawdzamy nieruchomość pod względem prawnym.</li>
+        <li>Wycenę i analizę rynku robimy razem z rzeczoznawcami majątkowymi.</li>
+        <li>Uzgadniamy warunki umowy i umawiamy termin u notariusza.</li>
+        <li>Bez opłat za przyjęcie zlecenia, bez sztywnych warunków i bez ukrytej wyłączności.</li>
+      </ul>
+      <figure class="tablica">
+        <img src="img/tablica-720.webp" srcset="img/tablica-720.webp 720w, img/tablica-1180.webp 1180w" sizes="(max-width: 900px) 92vw, 480px" alt="Tablica AGORA Nieruchomości na ogrodzeniu sprzedawanej hali w Maszewie Dużym" loading="lazy" width="720" height="456">
+        <figcaption>Nasza tablica na hali w Maszewie Dużym (gm. Stara Biała)</figcaption>
+      </figure>
+    </div>
+    <form class="formularz" id="zglos" novalidate>
+      <h3>Zgłoś nieruchomość</h3>
+      <div class="seg" role="radiogroup" aria-label="Co chcesz zrobić">
+        <label><input type="radio" name="cel" value="sprzedać" checked><span>Chcę sprzedać</span></label>
+        <label><input type="radio" name="cel" value="wynająć"><span>Chcę wynająć</span></label>
+      </div>
+      <div class="f-siatka">
+        <label class="pole"><span>Rodzaj</span>
+          <select name="rodzaj"><option>Mieszkanie</option><option>Dom</option><option>Działka</option><option>Lokal użytkowy</option><option>Hala / obiekt</option></select>
+        </label>
+        <label class="pole"><span>Powierzchnia (m²)</span><input name="pow" type="number" inputmode="numeric" min="0" placeholder="np. 62"></label>
+        <label class="pole f-szer"><span>Lokalizacja</span><input name="lokalizacja" type="text" placeholder="np. Płock, Podolszyce Północ" autocomplete="off"></label>
+        <label class="pole"><span>Imię</span><input name="imie" type="text" autocomplete="given-name" required></label>
+        <label class="pole"><span>Telefon</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" required></label>
+        <label class="pole f-szer"><span>Kilka słów o nieruchomości (opcjonalnie)</span><textarea name="opis" rows="3" placeholder="Piętro, stan, oczekiwana cena, kiedy można obejrzeć"></textarea></label>
+        <label class="pole f-szer plik"><span>Zdjęcia (opcjonalnie)</span><input name="zdjecia" type="file" accept="image/*" multiple><b class="plik-btn" id="plikTxt">Dodaj zdjęcia z telefonu lub komputera</b></label>
+      </div>
+      <label class="zgoda"><input type="checkbox" name="zgoda" required><span>Zgadzam się na kontakt w sprawie zgłoszenia. Administratorem danych jest AGORA Nieruchomości.</span></label>
+      <button class="btn btn-gl btn-pelny" type="submit">Wyślij zgłoszenie</button>
+      <p class="f-info" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="sek sek-jasna" id="obszar" aria-labelledby="obszar-h">
+  <div class="wrap obszar-in">
+    <div class="obszar-txt">
+      <h2 id="obszar-h">Płock i okolice w promieniu kilkudziesięciu kilometrów</h2>
+      <p>Najwięcej ofert mamy w samym Płocku, ale równie często jeździmy do domów i działek w gminach powiatu płockiego i gostynińskiego. Każdy trójkąt na mapie to jedna z ofert powyżej.</p>
+      <h3>Płock</h3>
+      <p class="miejsca">Stare Miasto i Centrum, Podolszyce Północ i Południe, Międzytorze, Wyszogrodzka, Kochanowskiego, Kolegialna, Skarpa, Radziwie, Góry, Graniczna, Ciechomice</p>
+      <h3>Okolice</h3>
+      <p class="miejsca">Słupno i Cekanowo, Stara Biała, Maszewo Duże, Brwilno, Bielsk, Goślice, Łąck, Grabina, Radzanowo, Brudzeń Duży, Gąbin, Dobrzyków, Gostynin, Białotarsk</p>
+    </div>
+    <div class="mapa-box">
+      <div class="mapa" id="mapaOfert" role="region" aria-label="Mapa ofert w Płocku i okolicy"></div>
+    </div>
+  </div>
+  <figure class="panorama">
+    <img src="img/wisla-1600.webp" srcset="img/wisla-800.webp 800w, img/wisla-1600.webp 1600w" sizes="100vw" alt="Widok z lotu ptaka na Wisłę i pola w gminie Brudzeń Duży" loading="lazy" width="1600" height="930">
+    <figcaption class="wrap">Wisła z działki widokowej w gminie Brudzeń Duży, 14 minut od Płocka. Działka jest w naszej ofercie.</figcaption>
+  </figure>
+</section>
+
+<section class="sek" id="biuro" aria-labelledby="biuro-h">
+  <div class="wrap biuro-in">
+    <figure class="biuro-foto">
+      <img src="img/ratusz-850.webp" alt="Ratusz na Starym Rynku w Płocku" loading="lazy" width="850" height="563">
+      <figcaption>Stary Rynek w Płocku. Agora po grecku to właśnie rynek - główny plac miasta, na którym się spotykano.</figcaption>
+    </figure>
+    <div class="biuro-txt">
+      <h2 id="biuro-h">Biuro z licencją, od 2010 roku przy Padlewskiego</h2>
+      <p>Pośredniczymy w kupnie, sprzedaży, wynajmie, dzierżawie i zamianie domów, mieszkań, lokali, gruntów i hal, na rynku wtórnym i pierwotnym. Współpracujemy z deweloperami, firmami i klientami indywidualnymi.</p>
+      <p>Biuro prowadzą Dariusz Ogórek i Dariusz Sztanderski - licencjonowani pośrednicy po studiach podyplomowych z pośrednictwa w obrocie nieruchomościami.</p>
+      <div class="tabliczka">
+        <svg viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 L50 1 L100 26" fill="none" stroke="currentColor" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg><span class="tab-tr" aria-hidden="true"></span>
+        <p><b>Licencje zawodowe pośrednika nr 15768 i 15804</b></p>
+        <p>Obowiązkowe ubezpieczenie OC w PZU · poufność informacji od klienta</p>
+      </div>
+      <h3>W jednym miejscu</h3>
+      <ul class="lista-2">
+        <li><b>Kredyt</b> - doradca Bankowego Centrum Finansowego porówna oferty kilku banków; kredyt bierzesz w banku, nam nic nie płacisz.</li>
+        <li><b>Ubezpieczenie</b> nieruchomości od zdarzeń losowych w polecanym towarzystwie.</li>
+        <li><b>Stan prawny</b> - regulujemy go z geodetami i kancelarią prawną.</li>
+        <li><b>Notariusz, projekt, wykończenie</b> - kontakty do sprawdzonych kancelarii notarialnych, biur projektowych i firm wykończeniowych.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sek sek-jasna" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap kontakt-in">
+    <div class="kontakt-dane">
+      <h2 id="kontakt-h">Zapraszamy do biura</h2>
+      <p class="adres">ul. Padlewskiego 3 lok. 7 (parter, przy Copy Flex)<br>09-402 Płock, osiedle Kolegialna</p>
+      <a class="duzy-tel" href="tel:+48243644477">24 364 44 77</a>
+      <a class="mail" href="mailto:biuro@agora-nieruchomosciplock.pl">biuro@agora-nieruchomosciplock.pl</a>
+      <p class="godz">Poniedziałek - piątek, 10:00 - 17:00</p>
+      <div class="mapa mapa-mala" id="mapaBiuro" role="region" aria-label="Mapa dojazdu do biura"></div>
+    </div>
+    <form class="formularz formularz-jasny" id="pytanie" novalidate>
+      <h3>Zapytaj o ofertę lub umów oglądanie</h3>
+      <div class="f-siatka">
+        <label class="pole"><span>Imię i nazwisko</span><input name="imie" type="text" autocomplete="name" required></label>
+        <label class="pole"><span>Telefon lub e-mail</span><input name="kontakt" type="text" autocomplete="tel" required></label>
+        <label class="pole f-szer"><span>Wiadomość</span><textarea name="wiad" id="wiad" rows="5" required placeholder="Której oferty dotyczy pytanie, kiedy pasuje Państwu oglądanie"></textarea></label>
+      </div>
+      <label class="zgoda"><input type="checkbox" name="zgoda" required><span>Zgadzam się na kontakt w sprawie zapytania. Administratorem danych jest AGORA Nieruchomości.</span></label>
+      <button class="btn btn-gl btn-pelny" type="submit">Wyślij wiadomość</button>
+      <p class="f-info" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap stopka-in">
+    <div class="stopka-firma">
+      <a class="logo logo-bialy" href="#top" aria-label="AGORA Nieruchomości - do góry">
+        <svg class="logo-znak" viewBox="-1 -2 91 33" aria-hidden="true"><g fill="none"><path d="M0 25 L34.3 1.8 L60 21" stroke="#9aa1a8" stroke-width="4.4"/><path d="M47 16 L62.7 4.5 L88.5 23.5" stroke="#23272b" stroke-width="8"/><path d="M47 16 L62.7 4.5 L88.5 23.5" stroke="#9aa1a8" stroke-width="4.4"/></g><path d="M12.4 17.5V8h6.2v5.3z" fill="#9aa1a8"/><path d="M21.5 30 L38.7 16.2 L56 30Z" fill="#34C6F5"/></svg>
+        <span class="logo-txt"><b>AGORA</b> NIERUCHOMOŚCI</span>
+      </a>
+      <p>ul. Padlewskiego 3 lok. 7, 09-402 Płock<br><a href="tel:+48243644477">24 364 44 77</a> · <a href="mailto:biuro@agora-nieruchomosciplock.pl">biuro@agora-nieruchomosciplock.pl</a><br>NIP 774 250 32 89 · REGON 611364901</p>
+    </div>
+    <nav class="stopka-nav" aria-label="Stopka">
+      <a href="#oferty">Oferty</a><a href="#sprzedaj">Sprzedaj lub wynajmij</a><a href="#obszar">Obszar działania</a><a href="#biuro">O biurze</a><a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+  <div class="wrap stopka-dol">
+    <span>© 2026 AGORA Nieruchomości. Ogłoszenia na stronie nie stanowią oferty w rozumieniu Kodeksu cywilnego.</span>
+    <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=agora-nieruchomosciplock.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+  </div>
+</footer>
+
+<div class="mob-pasek" id="mobPasek" aria-hidden="true">
+  <a href="tel:+48243644477" tabindex="-1">Zadzwoń</a>
+  <a href="#sprzedaj" class="mob-gl" tabindex="-1">Zgłoś nieruchomość</a>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
